@@ -7,8 +7,8 @@ names_file.close()
 # use match for begining of string, search for anywhere in string
 last_name = r"Love"
 first_name = r"Kenneth"
-print(re.match(last_name, data))
-print(re.search(first_name, data))
+# print(re.match(last_name, data))
+# print(re.search(first_name, data))
 
 # If you don't know the size of a file, it's better to read it a chunk at a time and close it automatically. The following snippet does that:
 
@@ -16,3 +16,5 @@ print(re.search(first_name, data))
 #    data = open_file.read()
 
 # The with causes the file to automatically close once the action inside of it finishes. And the action inside, the .read(), will finish when there are no more bytes to read from the file.
+
+print(re.search(r'\(\d\d\d\) \d\d\d-\d\d\d\d', data))
