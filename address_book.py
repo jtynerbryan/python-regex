@@ -10,15 +10,27 @@ first_name = r"Kenneth"
 print(re.match(last_name, data))
 print(re.search(first_name, data))
 
-# + for 1-infinite occurences, ? for 0-1 occurences, * for 0-infinite occurences, {num} for how many occurences
+# # + for 1-infinite occurences, ? for 0-1 occurences, * for 0-infinite occurences, {num} for how many occurences
 print(re.findall(r'\(?\d{3}\)?-?\s?\d{3}-\d{4}', data))
 
 print(re.findall(r'\w*, \w+', data))
 
 # find email addresses using sets
 print(re.findall(r'[-\w\d+.]+@[-\w\d.]+', data))
-# find all occurences of a specifc word using \b (boundaries) count and IGNORECASE
+
+# find all occurences of a specifc word using \b (boundaries) count and IGNORECASE (shorthand='I')
 print(re.findall(r'\b[trehous]{9}\b', data, re.I))
+
+# find email addresses not ending in .gov
+print(re.findall(r'\b@[\w\d.]*[^gov\t]+', data, re.I))
+
+# Use VERBOSE(shorthand='X') flag for multi-line strings
+print(re.findall(r'''
+    \b[-\w]+,
+    \s
+    [-\w ]+
+    [^\t\n]
+''', data, re.X))
 
 # If you don't know the size of a file, it's better to read it a chunk at a time and close it automatically. The following snippet does that:
 
