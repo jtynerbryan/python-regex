@@ -15,12 +15,10 @@ print(re.findall(r'\(?\d{3}\)?-?\s?\d{3}-\d{4}', data))
 
 print(re.findall(r'\w*, \w+', data))
 
-
-
-
-
-
-
+# find email addresses using sets
+print(re.findall(r'[-\w\d+.]+@[-\w\d.]+', data))
+# find all occurences of a specifc word using \b (boundaries) count and IGNORECASE
+print(re.findall(r'\b[trehous]{9}\b', data, re.I))
 
 # If you don't know the size of a file, it's better to read it a chunk at a time and close it automatically. The following snippet does that:
 
